@@ -1,0 +1,19 @@
+#让apollo在bootstrap阶段加载配置，否则默认application阶段，@ConditionalOnProperty无法读取
+#apollo:
+#  bootstrap:
+#    enabled: true
+
+server:
+  port: 8076
+
+logging:
+  config: classpath:log4j2-${config.profile:dev}.xml
+  level:
+    com.wehotel.sdk.*: debug
+spring:
+  redis:
+    port: 6379
+    host: 172.25.33.206
+    database: 10
+    password: 123456
+

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Configuration status="info" monitorInterval="10">
+
+    <properties>
+        <property name="appId">unionbuy-mall-server-web</property>
+        <property name="log.format">[%d] [%t] [%X{trace_id}] %-5p %C:%method:%L:%L - %m%n</property>
+        <property name="log.name">unionbuy-mall-server-web</property>
+        <!--<property name="logpath">/data/logs/nionbuy-mall-server-web</property>-->
+    </properties>
+
+    <appenders>
+        <!--控制台输出-->
+        <Console name="console" target="SYSTEM_OUT">
+            <PatternLayout   pattern="${log.format}" />
+        </Console>
+        <!--滚动文件，自动记录最新日志-->
+       <!-- <File name="running" fileName="${logpath}/${log.name}.log" append="false">
+            <PatternLayout pattern="${log.format}"/>
+        </File>-->
+
+        <!--<RollingFile name="rolling_file_debug" fileName="${logpath}/debug.log" filePattern="${logpath}/$${date:yyyy-MM}/debug-%d{yyyy-MM-dd}-%i.log">
+            <ThresholdFilter level="debug" onMatch="ACCEPT" onMismatch="ACCEPT"/>
+            <PatternLayout pattern="${log.format}"/>
+            <TimeBasedTriggeringPolicy modulate="true" interval="1"/>
+        </RollingFile>
+        <RollingFile name="rolling_file_info" fileName="${logpath}/info.log" filePattern="${logpath}/$${date:yyyy-MM}/info-%d{yyyy-MM-dd}-%i.log">
+            <ThresholdFilter level="info" onMatch="ACCEPT" onMismatch="DENY"/>
+            <PatternLayout pattern="${log.format}"/>
+            <TimeBasedTriggeringPolicy modulate="true" interval="1"/>
+        </RollingFile>
+        <RollingFile name="rolling_file_warn" fileName="${logpath}/warn.log" filePattern="${logpath}/$${date:yyyy-MM}/warn-%d{yyyy-MM-dd}-%i.log">
+            <ThresholdFilter level="warn" onMatch="ACCEPT" onMismatch="DENY"/>
+            <PatternLayout pattern="${log.format}"/>
+            <TimeBasedTriggeringPolicy modulate="true" interval="1"/>
+        </RollingFile>
+        <RollingFile name="rolling_file_error" fileName="${logpath}/error.log" filePattern="${logpath}/$${date:yyyy-MM}/error-%d{yyyy-MM-dd}-%i.log">
+            <ThresholdFilter level="error" onMatch="ACCEPT" onMismatch="DENY"/>
+            <PatternLayout pattern="${log.format}"/>
+            <TimeBasedTriggeringPolicy modulate="true" interval="1"/>
+        </RollingFile>-->
+
+    </appenders>
+
+    <loggers>
+        <root level="info">
+            <appender-ref ref="console"/>
+            <appender-ref ref="running"/>
+            <!--<appender-ref ref="rolling_file_debug"/>
+            <appender-ref ref="rolling_file_info"/>
+            <appender-ref ref="rolling_file_warn"/>
+            <appender-ref ref="rolling_file_error"/>-->
+        </root>
+    </loggers>
+
+</Configuration>
