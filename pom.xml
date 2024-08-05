@@ -87,7 +87,7 @@
         <dependency>
             <groupId>org.redisson</groupId>
             <artifactId>redisson</artifactId>
-            <version>3.11.2</version>
+            <version>3.22.0</version>
         </dependency>
         <!-- redisson序列化编码工具 -->
         <dependency>
